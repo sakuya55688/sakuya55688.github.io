@@ -1,0 +1,385 @@
+
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+    height: 100%;
+}
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 1.7;
+    color: #432;
+    height:100%; /* for scroll bar to appear again */
+    overflow:hidden;
+    display: flex;
+}
+a {
+    text-decoration: none;
+}
+footer {
+    background-color: rgba(68, 51, 34, 0.685);
+    text-align: center;
+    padding: 26px 0;
+}
+footer p {
+    color: #FFFFFF;
+    font-size: 0.875rem;
+}
+
+
+.background {
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    
+}
+.container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+#home {
+    background-image: url("./images/main-bg-01.jpg");
+    min-height: 100vh;
+}
+.logo{
+    background-image: url("./images/logo.png");
+    width: 50px;
+    margin-top: 14px;
+}
+
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+.nav-bar {
+    width: 100%;
+    height: 60px;
+    background-color: rgba(238, 234, 230, 0.219);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 4;
+    
+}
+.nav-list {
+   
+    display: flex;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    list-style: none;
+}
+.nav-list li {
+    margin: 0 18px;
+
+}
+.nav-list a {
+    padding: 0 2px;
+    color: rgba(55, 56, 56, 0.904);
+    transition: 0.4s ease-in-out;
+}
+.nav-list a:hover {
+    color: rgb(255, 255, 255);
+
+}
+
+.top-content {
+    font-family: "Philosopher";
+    text-align: right;
+    padding: 15% 150px;
+}
+.top-content h2 {
+    color: rgb(105, 102, 102);
+    font-size: 2.7rem;
+}
+.top-content p {
+    font-size: 1.325rem;
+    margin: 10px 0 42px;
+}
+.top-content a{
+    color: #353535;
+    font-size: 1.3rem;
+    background-color: rgba(163, 161, 161, 0.3);
+    border-radius: 5px;
+    border: 1px rgb(202, 201, 201) solid;
+    padding: 16px 32px;
+    cursor: pointer;
+}
+.top-content a:hover{
+    
+    background-color: rgba(204, 203, 203, 0.3);
+}
+
+#about {
+    background-image: url("./images/main-bg-03.jpg");
+
+    background-attachment: fixed;
+    min-height: 70vh;
+    position: relative;
+    align-items: center;
+    font-family: "Philosopher";
+}
+.about-title {   
+    color: rgb(250, 246, 246);
+    background-color: rgba(153, 153, 153, 0.178);
+    display: block;
+    
+    padding-top: 60px;
+
+    font-size: 2.25rem;
+    
+    text-align: center;
+}
+
+.about-container {
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.about-img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: auto;
+    margin: 5% 1%;
+    padding: 10px;
+}
+.about-img img {
+    opacity: 0.7;
+    width: 100%;
+    min-height: auto;
+    border-radius: 5px;
+    transform: scale(0.95);
+    transition: 0.4s ease;
+}
+.about-img img:hover {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.about-text {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+
+
+#skills {
+    background-image: url("./images/main-bg-02.jpg");
+    width: 100%;
+    min-height: 80vh;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 80vh;
+    
+    --slide-count: 3;
+}
+.swiper-wrapper{
+    position: relative;
+    width: calc(100% * var(--slide-count)); /* calculate total width*/
+    transition: all 0.2s;
+    
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* hide scrollbar in the third section */
+.swiper-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.swiper-slide {
+
+    color: #0bd;
+    background-color: rgba(163, 161, 161, 0.3);
+
+    text-align: center;
+    font-size: 18px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    scroll-snap-align: start;
+}
+
+.slide-box {
+    min-width: 80%;
+    height: 80%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease;
+}
+.slide-box:active {
+
+    transform: scale(1.01);
+    cursor: grabbing;
+}
+.skill-title {
+    
+    color: rgb(250, 246, 246);  
+    font-size: 2.25rem;
+    font-family: "Philosopher";
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+.skill-box {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.slide-box img {
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-color: #FAFAFA;
+    padding: 20px;
+    margin: 10px 30px;
+    border-radius: 5px;
+}
+
+
+/* projects */
+.projects {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    background-color: #FAFAFA;
+    font-family: "Philosopher";
+}
+.projects-title{
+    text-align: center;
+    margin-top: 30px;
+}
+.projects-title h2 {
+    color: rgb(146, 135, 135);
+    font-size: 2.55rem;
+}
+.projects-title p {
+    font-size: 1.325rem;
+    margin: 10px 0 42px;
+}
+
+.project {
+    height: 350px;
+    width: 800px;
+    margin: 25px auto;
+    display: flex;
+    flex-direction: row;
+    
+}
+/* project left */
+.project-image {
+    width: 50%;
+    height: 100%;
+    background-color: #FFFFFF;
+    margin-right: 10px;
+    transition: 0.4s ease;
+}
+.project-image:hover {
+    box-shadow: 0 0 10px #999;
+}
+.project-image img {
+    background-size: contain;
+    width: 100%;
+    height: auto;
+    
+}
+.image-description {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.image-description p {
+    color: #FAFAFA;
+    background-color: #26A69A;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+
+
+/* project right */
+.project-detail {
+    width: 50%;
+    height: 100%;
+    background-color: #FFFFFF;
+    text-align: center;
+    align-items: center;
+}
+.project-detail p {
+    text-align: left;
+    font-size: 1.1rem;
+    color: #432;
+    padding: 50px 20px;
+    
+}
+.project-detail h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.project-skill {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.project-skill p{
+    color: #FAFAFA;
+    background-color: #828686;
+    border-radius: 3px;
+    padding: 1px 5px;
+    margin: 0 3px;
+}
+
+
+/* Contact */
+#contact {
+    background-image: url("./images/main-bg-03.jpg");
+    
+    min-height: 70vh;
+    position: relative;
+    align-items: center;
+    font-family: "Philosopher";
+}
+.contact-title {
+    color: rgb(248, 247, 246);
+    display: block;
+    
+    padding-top: 60px;
+    font-size: 3.25rem;
+    font-family: "Philosopher";
+    text-align: center;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
