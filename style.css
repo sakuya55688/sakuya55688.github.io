@@ -42,11 +42,11 @@ footer p {
 }
 
 #home {
-    background-image: url("./images/main-bg-01.jpg");
+    background-image: url("images/main-bg-01.jpg");
     min-height: 100vh;
 }
 .logo{
-    background-image: url("./images/logo.png");
+    background-image: url("images/logo.png");
     width: 50px;
     margin-top: 14px;
 }
@@ -116,7 +116,7 @@ footer p {
 }
 
 #about {
-    background-image: url("./images/main-bg-03.jpg");
+    background-image: url("images/main-bg-03.jpg");
 
     background-attachment: fixed;
     min-height: 70vh;
@@ -176,7 +176,7 @@ footer p {
 
 
 #skills {
-    background-image: url("./images/main-bg-02.jpg");
+    background-image: url("images/main-bg-02.jpg");
     width: 100%;
     min-height: 80vh;
 }
@@ -361,7 +361,7 @@ footer p {
 
 /* Contact */
 #contact {
-    background-image: url("./images/main-bg-03.jpg");
+    background-image: url("images/main-bg-03.jpg");
     
     min-height: 70vh;
     position: relative;
