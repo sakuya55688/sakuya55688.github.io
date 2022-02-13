@@ -5,10 +5,10 @@
         <meta charset="utf-8">
         <meta name="Portfolio" content="A website showing what I have done before">
         <meta name="viewport" content="width=device-width initial-scale=1">
-        <link rel="icon" href="./images/logo.png">
+        <link rel="icon" href="icons/logo.png">
         <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-        <link rel="stylesheet" href="./style.css">
-        <link rel="stylesheet" href="./style-mobile.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style-mobile.css">
         <link rel="stylesheet"
             href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
         />
@@ -16,9 +16,13 @@
     </head>
     <body>
         <div class="container">
-             
+            <img id="menu-icon" src="icons/menu.png" 
+             alt="menu" onclick="toggleNav(event)">
             <nav class="nav-bar">
-                <div class="logo"></div>
+                <a href="javascript:void(0)" class="closeButton"
+                    onclick="toggleNav(event)"
+                >&times;</a>
+                        
                 <ul class="nav-list">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -46,7 +50,7 @@
                     
                     <div class="about-img">
                         <img src="images/group02.jpg" alt="about02">
-                        <h4 class="about-text">Personalities</h4>
+                        <h4 class="about-text">Internship</h4>
                     </div>
                     
                     
@@ -54,10 +58,10 @@
                         <img src="images/group01.jpg" alt="about03">
                         <h4 class="about-text">Teamworks</h4>
                     </div>
-                    
-                    
                 </div>
             </section>
+
+            <div class="modal" id="about-modal1"></div>
             
             <section id="skills" class="background">
 
@@ -70,8 +74,8 @@
                             <div class="slide-box"> 
                                 <h2 class="skill-title">Prototyping</h2>
                                 <div class="skill-box">
-                                    <img src="./icons/arduino.svg" alt="arduino">
-                                    <img src="./icons/c.svg" alt="c++">
+                                    <img src="webtechicons/arduino.svg" alt="arduino">
+                                    <img src="webtechicons/c.svg" alt="c++">
                                 </div>
                             </div>
                         </div>
@@ -79,12 +83,12 @@
                             
                             <div class="slide-box">
                                 <h2 class="skill-title">Web Development</h2>
-                                <div class="skill-box"><img src="./icons/nodejs.svg" alt="node.js">
-                                <img src="./icons/expressjs.svg" alt="express">
-                                <img src="./icons/react.svg" alt="react.js">
-                                <img src="./icons/mysql.svg" alt="mysql">
-                            </div>
-                                
+                                <div class="skill-box">
+                                    <img src="webtechicons/nodejs.svg" alt="node.js">
+                                    <img src="webtechicons/expressjs.svg" alt="express">
+                                    <img src="webtechicons/react.svg" alt="react.js">
+                                    <img src="webtechicons/mysql.svg" alt="mysql">
+                                </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -92,14 +96,15 @@
                             <div class="slide-box">
                                 <h2 class="skill-title">Other Skills</h2>
                                 <div class="skill-box">
-                                    <img src="./icons/vuejs.svg" alt="vue.js">
-                                    
-                                    <img src="./icons/mongodb.svg" alt="mongodb">
-                                    <img src="./icons/unity.svg" alt="unity">
+        
+                                    <img src="webtechicons/electron.svg" alt="electron">
+                                    <img src="webtechicons/unity.svg" alt="unity">
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="swiper-pagination"></div>
                 </div>
                 
             </section>  
@@ -107,13 +112,14 @@
             <section id="projects" class="background">
                 <div class="projects-title">
                     <h2>My Projects</h2>
-                    <p>Find out more on <a href="http://github.com"> Github</a></p>
+                    <p>Find out more on <a target="_blank" rel="noopener noreferrer" href="https://github.com/sakuya55688"> Github</a></p>
                 </div>
                 <div class="project">
                     <div class="project-image">
-                        <img src="./images/menu3.jpg" alt="img1">
+                        <img src="images/projectimage/EdgeCollector02.jpg" alt="front01" class="project-frontIMG">
+                        <img src="GIFs/EdgeCollector.gif" alt="back01" class="project-backGIF">
                         <div class="image-description">
-                            <h4>Edge Collector</h4>
+                            <a target="_blank" rel="noopener noreferrer"href="https://github.com/sakuya55688/EdgeCollectorLite" class="project-icon"></a>
                             <p>Master's Thesis</p>
                         </div>
                     </div>
@@ -124,21 +130,22 @@
                             <p>Express</p>
                             <p>MySQL</p>
                         </div>
-                        <p>A new IoT structure design for user friendly and easy maintenance. To do so,<br>
+                        <p>New IoT structure design for "Maintenance".<br>
                         </p>
                     </div>
                 </div>
                 
                 <div class="project">
                     <div class="project-image">
-                        <img src="./images/menu1.jpg" alt="img1">
+                        <img src="images/projectimage/CloudDrip01.jpg" alt="front02" class="project-frontIMG">
+                        <img src="GIFs/CloudDrip.gif" alt="back02" class="project-backGIF" id="project02-back">
                         <div class="image-description">
-                            <h4>Heatmap</h4>
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/sakuya55688/Heatmap" class="project-icon"></a>
                             <p>Project</p>
                         </div>
                     </div>
                     <div class="project-detail">
-                        <h2>Heatmap </h2>
+                        <h2>Cloud Drip Monitoring System</h2>
                         <div class="project-skill">
                             <p>Express</p>
                             <p>D3</p>
@@ -151,9 +158,11 @@
                 </div>
                 <div class="project">
                     <div class="project-image">
-                        <img src="./images/menu2.jpg" alt="img1">
+                        <img src="images/projectimage/quicksketch.png" alt="front03" class="project-frontIMG">
+                        <img src="GIFs/QuickSketch.gif" alt="back03" class="project-backGIF" id="project03-back">
+                        
                         <div class="image-description">
-                            <h4>Quicksketch</h4>
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/sakuya55688/quicksketch" class="project-icon"></a>
                             <p>Side Project</p>
                         </div>
                     </div>
@@ -161,11 +170,11 @@
                         <h2>Quicksketch</h2>
                         <div class="project-skill">
                             <p>React</p>
-                            <p>Express</p> 
+                            <p>Express</p>
                         </div>
                         <p>A lite drawing board that you can use your own image on pc to practice.
-                           With pressure detection and count down functionality, you can use 
-                           pad with pen to horn your quichsketch skills.
+                           <br/>With pressure detection and count down functionality, you can use 
+                           pad with pen to horn your drawing skills.
                         </p>
                     </div>
                 </div>
